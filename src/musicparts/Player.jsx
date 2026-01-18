@@ -111,17 +111,17 @@ const Player = () => {
   return (
     <div className="hidden lg:flex player h-[15vh] w-full text-white justify-between items-center p-2">
       {currentSong ? (
-        <div className="playerleft h-full w-full lg:w-[25%] rounded-lg overflow-auto p-1 lg:gap-2 flex justify-start items-center ">
+        <div className="playerleft h-full w-full lg:w-[25%] rounded-lg overflow-hidden p-1 lg:p-2 gap-1 lg:gap-2 flex justify-start items-center ">
           <img
-            className=" h-12 w-12 lg:h-20 lg:w-25 rounded-lg object-cover object-top"
+            className=" h-12 w-12 lg:h-18 lg:w-28 rounded-lg object-cover object-top"
             src={currentSong?.image}
             alt=""
           />
           <div className="tog flex flex-col">
-            <h3 className="text-xs lg:text-xl font-semibold">
+            <h3 className="text-xs lg:text-lg font-semibold">
               {currentSong?.song}
             </h3>
-            <h5 className="text-xs lg:text-lg ">{currentSong?.artist}</h5>
+            <h5 className="text-xs lg:text-md ">{currentSong?.artist}</h5>
           </div>
           <Heart
             size={20}
@@ -136,12 +136,12 @@ const Player = () => {
       ) : (
         <div className="playerleft h-full w-full lg:w-[25%] rounded-lg overflow-hidden p-1 lg:p-2 gap-1 lg:gap-2 flex justify-start items-center ">
           <img
-            className=" h-12 w-12 lg:h-20 lg:w-25 rounded-lg object-cover object-top"
+            className=" h-12 w-12 lg:h-18 lg:w-28 rounded-lg object-cover object-top"
             src={songs[0]?.image}
             alt=""
           />
           <div className="tog flex flex-col">
-            <h3 className="text-xs lg:text-xl font-semibold">
+            <h3 className="text-xs lg:text-lg font-semibold">
               {songs[0]?.song}
             </h3>
             <h5 className="text-xs lg:text-md ">{songs[0]?.artist}</h5>
@@ -157,7 +157,7 @@ const Player = () => {
           />{" "}
         </div>
       )}
-      <div className="playercenter h-full w-full lg:w-[50%] p-1 lg:p-2 flex flex-col justify-center items-center gap-1 lg:gap-3 ">
+      <div className="playercenter h-full w-full lg:w-[50%] p-1 lg:p-2 flex flex-col justify-center items-center gap-1 lg:gap-1 ">
         <div className="control flex gap-2 lg:gap-4">
           <SkipBackIcon
             onClick={handleBackwardSong}
@@ -184,7 +184,7 @@ const Player = () => {
           />
         </div>
         <div className="tracker flex gap-1 lg:gap-3 items-center justify-center w-full px-2">
-          <h3 className="text-xs lg:text-lg">{formatTime(currentTime)}</h3>
+          <h3 className="text-base lg:text-md">{formatTime(currentTime)}</h3>
           <div className="outsider h-1 lg:h-2 w-full lg:w-130 bg-white rounded-xl relative">
             {/* <div className="insider absolute h-full bg-green-500 w-[50%] rounded-xl"></div> */}
             {/* apan range ka use kar rhe as a input to track the song currenttime */}
@@ -199,19 +199,19 @@ const Player = () => {
           </div>
           {/* <h3>{currentSong?.duration}</h3> */}
           {/* //ye ek tarika hai ki aap statically duration de do par best approach is to take it from audioRef */}
-          <h3 className="text-xs lg:text-lg">{formatTime(duration)}</h3>
+          <h3 className="text-base lg:text-md">{formatTime(duration)}</h3>
         </div>
       </div>
-      <div className="playerright h-full w-full lg:w-[25%] flex justify-center items-center gap-2 lg:gap-4 ">
-        <MicVocal size={30} className="text-[#C2C2C2] lg:h-[24px]" />
-        <Rows3 size={30} className="text-[#C2C2C2] lg:h-[24px]" />
-        <MonitorSpeaker size={30} className="text-[#C2C2C2] lg:h-[24px]" />
+      <div className="playerright h-full w-full lg:w-[25%] flex justify-center items-center gap-2 lg:gap-2 ">
+        <MicVocal size={30} className="text-[#C2C2C2] lg:h-[20px]" />
+        <Rows3 size={30} className="text-[#C2C2C2] lg:h-[20px]" />
+        <MonitorSpeaker size={30} className="text-[#C2C2C2] lg:h-[20px]" />
         <div className="mic hidden lg:flex justify-center items-center">
           <Volume className="text-[#C2C2C2] " />
           <div className="div h-1 w-25 rounded-lg bg-white"></div>
         </div>
-        <Minimize size={30} className="text-[#C2C2C2] lg:h-[24px]" />
-        <Maximize size={30} className="text-[#C2C2C2] lg:h-[24px]" />
+        <Minimize size={30} className="text-[#C2C2C2] lg:h-[20px]" />
+        <Maximize size={30} className="text-[#C2C2C2] lg:h-[20px]" />
       </div>
       <div>
         <audio

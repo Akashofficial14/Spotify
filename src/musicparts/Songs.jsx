@@ -56,7 +56,7 @@ const Songs = () => {
             <div
               onClick={() => dispatch(addSong(songs))}
               key={idx}
-              className="song h-[30vw] w-[30vw] lg:h-50 lg:w-47 gap-0.5 rounded-lg overflow-hidden p-1 lg:p-1 flex justify-center items-center flex-col hover:bg-[#2d2c2c] "
+              className="song h-[30vw] w-[30vw] lg:h-38 lg:w-43 gap-0.5 rounded-lg overflow-hidden p-1 lg:p-2 flex justify-center items-center flex-col hover:bg-[#2d2c2c] "
             >
               <img
                 className="h-8/12 w-full rounded-lg object-cover object-top"
