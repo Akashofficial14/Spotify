@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+.container::-webkit-scrollbar{
+  display:none
+}
+.view::-webkit-scrollbar{
+  display:none
+}
+.liked::-webkit-scrollbar{
+  display:none
+}
