@@ -5,7 +5,7 @@ import { songs } from "../AllSongs/Songs";
 const View = () => {
   let { currentSong, isPlaying } = useSelector((state) => state.song);
   return (
-    <div className="view h-full w-full lg:w-[25%] bg-[#121212] p-2 lg:p-3 text-white overflow-auto hidden lg:block">
+    <div className="view h-full w-full lg:w-[25%] bg-[#121212] p-2 lg:p-3 rounded-xl mr-2 text-white overflow-auto hidden lg:block">
       {currentSong == null ? (
         <div className="look flex flex-col gap-2 lg:gap-3 ">
           <img className="rounded-xl" src={songs[0].image} alt="" />

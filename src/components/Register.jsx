@@ -17,6 +17,7 @@ const Register = ({settoggle}) => {
 
   const onSubmit = (data) => {
     // console.log("REGISTER DATA 👉", data);
+    alert("user is registered now you can login")
     let upArr=[...regUserData,data]
     localStorage.setItem("regdata",JSON.stringify(upArr))
     dispatch(setRegUser(upArr))
@@ -25,22 +26,22 @@ const Register = ({settoggle}) => {
 
   return (
     <div className="min-h-screen bg-black flex items-center justify-center py-4 lg:py-10 px-4 lg:px-0">
-      <div className="w-full max-w-md px-4 lg:px-6">
+      <div className="w-full max-w-md px-4 flex flex-col gap-18 lg:px-6 lg:gap-0">
         {/* Spotify Logo */}
-             <div className="flex justify-center mb-4">
+             <div className="flex justify-center flex-col items-center gap-2 mb-4">
           <svg
             viewBox="0 0 168 168"
-            className="w-8 h-8 lg:w-10 lg:h-10 fill-white"
+            className="w-18 h-18 lg:w-10 lg:h-10 fill-white"
           >
             <path d="M84 0a84 84 0 1 0 0 168A84 84 0 0 0 84 0zm38.2 121.3c-1.6 2.6-5 3.4-7.6 1.8-20.8-12.7-47-15.6-77.8-8.6-3 .7-6-1.1-6.7-4.1-.7-3 1.1-6 4.1-6.7 33.7-7.7 63.7-4.3 86.6 9.6 2.6 1.6 3.4 5 1.8 7.6zm10.9-24.2c-2 3.2-6.3 4.2-9.5 2.2-23.8-14.6-60-18.8-88.2-10.2-3.6 1.1-7.4-.9-8.5-4.5-1.1-3.6.9-7.4 4.5-8.5 32.3-9.8 72.4-5.1 100 11.8 3.2 2 4.2 6.3 2.2 9.5zm1-25.2c-28.6-17-75.7-18.6-103-10.3-4.2 1.3-8.7-1.1-10-5.3-1.3-4.2 1.1-8.7 5.3-10 31.4-9.5 83.7-7.7 116.7 12.1 3.8 2.3 5 7.2 2.7 11-2.3 3.8-7.2 5-11 2.7z" />
           </svg>
-        </div>
-
-        {/* Title */}
-        <h1 className="text-white text-3xl lg:text-6xl font-bold text-center mb-4 lg:mb-6">
+                 {/* Title */}
+        <h1 className="text-white text-4xl lg:text-6xl font-bold text-center mb-4 lg:mb-6">
           Sign up to start listening
         </h1>
-
+        </div>
+       <div className="child">
+  
         {/* Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 lg:space-y-4">
           {/* Name */}
@@ -156,13 +157,16 @@ const Register = ({settoggle}) => {
         </div>
 
         {/* Footer */}
-        <p className="text-center text-gray-400 text-sm lg:text-md mt-6 lg:mt-8">
+        <p className="text-center text-white text-md lg:text-md mt-6 lg:text-gray-400 mt-8">
           Already have an account?{" "}
-          <span className="text-white text-base lg:text-lg hover:scale-110 transition duration-300 cursor-pointer"
+          <br />
+          <span className="text-white text-lg lg:text-base hover:scale-110 transition duration-300 cursor-pointer"
           onClick={()=>{settoggle((prev)=>(!prev))}}>
             Log in
           </span>
         </p>
+</div>
+ 
       </div>
     </div>
   );

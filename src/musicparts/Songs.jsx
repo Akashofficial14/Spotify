@@ -42,7 +42,7 @@ const Songs = () => {
         <h3 className="text-md px-4 py-1 bg-gray text-white rounded-full border-2 border-white ">Music</h3>
         <h3 className="text-md px-4 py-1 bg-gray text-white rounded-full border-2"> Podcast</h3>
       </div>
-    <div className="container pt-16 pb-2 overflow-auto lg:pt-2 pb-2 lg:w-[50%] bg-[#121212] flex flex-wrap justify-center items-center gap-2 text-white ">
+    <div className="container pt-16 pb-2 overflow-auto lg:pt-2 pb-2 lg:w-[50%] bg-[#121212] flex flex-wrap justify-center items-center gap-2 text-white rounded-xl ">
 
       {query && fSong.length == 0 ? (
         <div className="w-full h-full flex items-center justify-center">

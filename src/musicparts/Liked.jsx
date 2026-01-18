@@ -17,7 +17,7 @@ const Liked = () => {
   return (
 <div
   className="flex flex-col gap-3 w-screen h-screen bg-[#121212] text-white p-6 
-             lg:w-[25%] lg:h-[74vh] lg:bg-[#121212] "
+             lg:w-[25%] lg:h-[74vh] lg:bg-[#121212] rounded-xl ml-2 "
 >
       {/* TOP */}
       <div className="flex justify-between items-center">

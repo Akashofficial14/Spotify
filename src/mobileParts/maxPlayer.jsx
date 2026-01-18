@@ -32,7 +32,9 @@ const MaxPlayer = () => {
     let updatedArr;
     if (isLiked) {
       updatedArr = likedSongs.filter((song) => song.id !== currentSong.id);
+                   alert("song is removed from liked songs")
     } else {
+      alert("song is added to liked songs")
       updatedArr = [...likedSongs, currentSong];
     }
     localStorage.setItem("likedSongs", JSON.stringify(updatedArr));

@@ -43,9 +43,11 @@ const Player = () => {
     if (isLiked) {
       // unlike
       updatedArr = likedSongs.filter((song) => song.id !== currentSong.id);
+              alert("song is removed from liked songs")
     } else {
       // like
       updatedArr = [...likedSongs, currentSong];
+        alert("song is added to liked songs")
     }
 
     localStorage.setItem("likedSongs", JSON.stringify(updatedArr));
