@@ -10,7 +10,7 @@ import Navmobile from "../components/Navmobile";
 import MiniPlayer from "../mobileParts/miniPlayer";
 import MaxPlayer from "../mobileParts/maxPlayer";
 import { useSelector } from "react-redux";
-import Create from "../mobileParts/create";
+import Create from "../mobileParts/Create";
 
 const HomeLayout = () => {
   const { activatedTab, closemaxPlayer } = useSelector((state) => state.mobileNav);
