@@ -41,7 +41,7 @@ const MiniPlayer = () => {
   if (!currentSong) return null; // Don't show if no song is selected
 
   return (
-    <div className="fixed bottom-20 left-2 right-2 bg-[#7B080C] h-14 rounded-md flex items-center justify-between px-3 shadow-2xl lg:hidden z-50">
+    <div className="fixed bottom-16 left-2 right-2 bg-[#7B080C] h-14 rounded-md flex items-center justify-between px-3 shadow-2xl lg:hidden z-50">
       {/* Song Info */}
       <div onClick={()=>dispatch(closeMaxFn())} className="flex items-center gap-3 overflow-hidden">
         <img

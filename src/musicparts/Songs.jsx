@@ -38,11 +38,11 @@ const Songs = () => {
             </svg>
           </div>
         </div>
-        <h3  className="text-lg px-5 py-1 bg-green-500 text-white rounded-full ">All</h3>
-        <h3 className="text-lg px-5 py-1 bg-gray text-white rounded-full border-2 border-white ">Music</h3>
-        <h3 className="text-lg px-5 py-1 bg-gray text-white rounded-full "> Podcast</h3>
+        <h3  className="text-md px-4 py-1 bg-green-500 text-white rounded-full ">All</h3>
+        <h3 className="text-md px-4 py-1 bg-gray text-white rounded-full border-2 border-white ">Music</h3>
+        <h3 className="text-md px-4 py-1 bg-gray text-white rounded-full border-2"> Podcast</h3>
       </div>
-    <div className="container pt-14 overflow-auto lg:pt-0 lg:w-[50%] bg-[#121212] flex flex-wrap justify-start items-center gap-2 px-4 text-white ">
+    <div className="container pt-16 pb-2 overflow-auto lg:pt-2 pb-2 lg:w-[50%] bg-[#121212] flex flex-wrap justify-center items-center gap-2 text-white ">
 
       {query && fSong.length == 0 ? (
         <div className="w-full h-full flex items-center justify-center">
@@ -56,7 +56,7 @@ const Songs = () => {
             <div
               onClick={() => dispatch(addSong(songs))}
               key={idx}
-              className="song h-30 w-30 lg:h-50 lg:w-47 gap-0.5 rounded-lg overflow-hidden p-1 lg:p-2 flex justify-center items-center flex-col hover:bg-[#2d2c2c] "
+              className="song h-[30vw] w-[30vw] lg:h-50 lg:w-47 gap-0.5 rounded-lg overflow-hidden p-1 lg:p-1 flex justify-center items-center flex-col hover:bg-[#2d2c2c] "
             >
               <img
                 className="h-8/12 w-full rounded-lg object-cover object-top"

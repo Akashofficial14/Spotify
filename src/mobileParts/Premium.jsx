@@ -42,9 +42,9 @@ const Premium = () => {
   ];
 
   return (
-    <div className="bg-[#121212] min-h-screen text-white pb-32 overflow-auto lg:hidden">
+    <div className="bg-[#121212] min-h-screen text-white pb-3 overflow-auto lg:hidden">
       {/* Header Section */}
-      <div className="p-6 pt-12 text-center bg-gradient-to-b from-[#222] to-[#121212]">
+      <div className="p-6 pt-5 text-center bg-gradient-to-b from-[#222] to-[#121212]">
         <h1 className="text-3xl font-bold mb-4">Experience the difference</h1>
         <p className="text-gray-400 text-md">Go Premium and enjoy full control of your listening. Cancel anytime.</p>
       </div>
