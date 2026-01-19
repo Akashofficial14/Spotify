@@ -4,10 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { addSong } from "../features/PlaySlice";
 import { filterSongArr } from "../features/filterSongSlice";
 import { Outlet } from "react-router";
+import { CircleUserRound } from "lucide-react";
+import { LogoutFn } from "../features/AuthSlice";
+import Logout from "../components/Logout";
 const Songs = () => {
   const songData = songs;
   let dispatch = useDispatch();
   let { fSong, query } = useSelector((state) => state.filter);
+    let { logout } = useSelector((state) => state.auth);
   //  console.log(fSong)
   // console.log(query);
   let Displaysong = fSong.length > 0 ? fSong : songData;
@@ -26,10 +30,11 @@ const Songs = () => {
   //     }
   //  },[isPlaying,currentSong])
   return (
-      <>
-            <div className="flex fixed top-0 px-3 bg-black py-3 h-14 w-full justify-start items-center gap-2 lg:hidden">
-        <div className="part1 lg:w-[30%]">
-          <div className="flex justify-start">
+    <>
+      <div className="flex fixed top-0 px-3 bg-black py-3 h-14 w-full justify-between items-center gap-2 lg:hidden">
+<div className="child1 flex justify-start gap-2">
+          <div className="part1 lg:w-[30%]">
+          <div className="">
             <svg
               viewBox="0 0 168 168"
               className="w-8 h-8 lg:w-10 lg:h-10 fill-white"
@@ -38,45 +43,61 @@ const Songs = () => {
             </svg>
           </div>
         </div>
-        <h3  className="text-md px-4 py-1 bg-green-500 text-white rounded-full ">All</h3>
-        <h3 className="text-md px-4 py-1 bg-gray text-white rounded-full border-2 border-white ">Music</h3>
-        <h3 className="text-md px-4 py-1 bg-gray text-white rounded-full border-2"> Podcast</h3>
+        <h3 className="text-md px-4 py-1 bg-green-500 text-white rounded-full ">
+          All
+        </h3>
+        <h3 className="text-md px-4 py-1 bg-gray text-white rounded-full border-2 border-white ">
+          Music
+        </h3>
+        <h3 className="text-md px-4 py-1 bg-gray text-white rounded-full border-2">
+          {" "}
+          Podcast
+        </h3>
+</div>
+              <CircleUserRound
+        size={35}
+        onClick={() => dispatch(LogoutFn())}
+        className="text-white hover:text-white hover:scale-105 lg:w-[25px] lg:h-[30px]"
+      />
+                {logout ? <Logout /> : ""}
       </div>
-    <div className="container pt-16 pb-2 overflow-auto lg:pt-2 pb-2 lg:w-[50%] bg-[#121212] flex flex-wrap justify-center items-center gap-2 text-white rounded-xl ">
 
-      {query && fSong.length == 0 ? (
-        <div className="w-full h-full flex items-center justify-center">
-          <h1 className="text-gray-400 text-base lg:text-xl">
-            No results found
-          </h1>
-        </div>
-      ) : (
-        Displaysong.map((songs, idx) => {
-          return (
-            <div
-              onClick={() => dispatch(addSong(songs))}
-              key={idx}
-              className="song h-[30vw] w-[30vw] lg:h-38 lg:w-43 gap-0.5 rounded-lg overflow-hidden p-1 lg:p-2 flex justify-center items-center flex-col hover:bg-[#2d2c2c] "
-            >
-              <img
-                className="h-8/12 w-full rounded-lg object-cover object-top"
-                src={songs.image}
-                alt=""
-              />
-              <h3 className="text-sm lg:text-lg font-semibold">{songs.song}</h3>
-              <h5 className="text-xs lg:text-md ">{songs.artist}</h5>
-            </div>
-          );
-        })
-      )}
-      {/* <div>
+      <div className="container pt-16 pb-2 overflow-auto lg:pt-2 pb-2 lg:w-[50%] bg-[#121212] flex flex-wrap justify-center items-center gap-2 text-white rounded-xl ">
+        {query && fSong.length == 0 ? (
+          <div className="w-full h-full flex items-center justify-center">
+            <h1 className="text-gray-400 text-base lg:text-xl">
+              No results found
+            </h1>
+          </div>
+        ) : (
+          Displaysong.map((songs, idx) => {
+            return (
+              <div
+                onClick={() => dispatch(addSong(songs))}
+                key={idx}
+                className="song h-[30vw] w-[30vw] lg:h-38 lg:w-43 gap-0.5 rounded-lg overflow-hidden p-1 lg:p-2 flex justify-center items-center flex-col hover:bg-[#2d2c2c] "
+              >
+                <img
+                  className="h-8/12 w-full rounded-lg object-cover object-top"
+                  src={songs.image}
+                  alt=""
+                />
+                <h3 className="text-sm lg:text-lg font-semibold">
+                  {songs.song}
+                </h3>
+                <h5 className="text-xs lg:text-md ">{songs.artist}</h5>
+              </div>
+            );
+          })
+        )}
+        {/* <div>
         <Outlet />
       </div> */}
-      {/* <div>
+        {/* <div>
         <audio src={currentSong?.url} ref={audioRef} onTimeUpdate={handleUpdatetime}></audio>
       </div> */}
-    </div>
-  </>
+      </div>
+    </>
   );
 };
 
