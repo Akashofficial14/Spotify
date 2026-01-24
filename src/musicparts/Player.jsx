@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addSong, playandpause, updateProgress } from "../features/PlaySlice";
 import { songs } from "../AllSongs/Songs";
 import { likedSongFn } from "../features/filterSongSlice";
+import { toast } from "react-toastify";
 
 const Player = () => {
   // “currentSong bar-bar render ho raha hai, to likedSongFn bar-bar call ho jayega?”
@@ -43,11 +44,11 @@ const Player = () => {
     if (isLiked) {
       // unlike
       updatedArr = likedSongs.filter((song) => song.id !== currentSong.id);
-              alert("song is removed from liked songs")
+              toast.success("Removed from Liked Songs.")
     } else {
       // like
       updatedArr = [...likedSongs, currentSong];
-        alert("song is added to liked songs")
+        toast.success("Added to Liked Songs.")
     }
 
     localStorage.setItem("likedSongs", JSON.stringify(updatedArr));

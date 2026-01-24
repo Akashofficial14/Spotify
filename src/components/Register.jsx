@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 // import { MyStore } from "../contextApi/MyContext";
 import { useDispatch, useSelector } from "react-redux";
 import { setRegUser } from "../features/AuthSlice";
+import { toast } from "react-toastify";
 
 const Register = ({settoggle}) => {
   // let {regdata,setRegdata} = useContext(MyStore)
@@ -17,11 +18,12 @@ const Register = ({settoggle}) => {
 
   const onSubmit = (data) => {
     // console.log("REGISTER DATA 👉", data);
-    alert("user is registered now you can login")
     let upArr=[...regUserData,data]
     localStorage.setItem("regdata",JSON.stringify(upArr))
     dispatch(setRegUser(upArr))
+    toast.success("Account created successfully. Welcome to Spotify!")
     reset()
+    settoggle((prev)=>(!prev))
   };
 
   return (
