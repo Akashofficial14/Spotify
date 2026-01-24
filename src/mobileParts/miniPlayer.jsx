@@ -13,6 +13,7 @@ import { songs } from "../AllSongs/Songs";
 import { likedSongFn } from "../features/filterSongSlice";
 import { useRef } from "react";
 import { closeMaxFn } from "../features/mobileNav";
+import { toast } from "react-toastify";
 // Import your play/pause toggle action from your slice
 // import { togglePlay } from "../features/PlaySlice";
 
@@ -30,10 +31,10 @@ const MiniPlayer = () => {
     if (isLiked) {
       // unlike
       updatedArr = likedSongs.filter((song) => song.id !== currentSong.id);
-                   alert("song is removed from liked songs")
+                   toast.success("Removed from Liked Songs.")
     } else {
       // like
-      alert("song is added to liked songs")
+      toast.success("Added to Liked Songs.")
       updatedArr = [...likedSongs, currentSong];
     }
     localStorage.setItem("likedSongs", JSON.stringify(updatedArr));

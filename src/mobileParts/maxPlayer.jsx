@@ -17,6 +17,7 @@ import { addSong, playandpause } from "../features/PlaySlice";
 import { songs } from "../AllSongs/Songs";
 import { likedSongFn } from "../features/filterSongSlice";
 import { closeMaxFn } from "../features/mobileNav";
+import { toast } from "react-toastify";
 
 const MaxPlayer = () => {
   const { likedSongs } = useSelector((state) => state.filter);
@@ -32,9 +33,9 @@ const MaxPlayer = () => {
     let updatedArr;
     if (isLiked) {
       updatedArr = likedSongs.filter((song) => song.id !== currentSong.id);
-                   alert("song is removed from liked songs")
+                   toast.success("Removed from Liked Songs.")
     } else {
-      alert("song is added to liked songs")
+       toast.success("Added to Liked Songs.")
       updatedArr = [...likedSongs, currentSong];
     }
     localStorage.setItem("likedSongs", JSON.stringify(updatedArr));

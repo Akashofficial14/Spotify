@@ -148,21 +148,36 @@ const Register = ({settoggle}) => {
           <div className="flex-1 h-px bg-gray-700" />
         </div>
 
-        {/* Social Buttons */}
-        <div className="space-y-2 lg:space-y-3">
-          <button className="w-full flex font-bold items-center justify-center gap-3 border border-gray-600 text-white text-xs lg:text-base py-2 lg:py-3 rounded-full hover:border-white transition">
-            Sign up with Google
-          </button>
-          <button className="w-full flex font-bold items-center justify-center gap-3 border border-gray-600 text-white text-xs lg:text-base py-2 lg:py-3 rounded-full hover:border-white transition">
-            Sign up with Apple
-          </button>
-        </div>
+{/* Social Buttons */}
+          <div className="space-y-2 lg:space-y-3 font-bold">
+            {[
+              {
+                img: "https://img.icons8.com/?size=100&id=V5cGWnc9R4xj&format=png&color=000000",
+                text: "Continue with Google",
+              },
+              {
+                img: "https://img.icons8.com/?size=100&id=WUbpOIDjs4KP&format=png&color=000000",
+                text: "Continue with Apple",
+              },
+            ].map((elem) => (
+              <div className="box relative">
+                <button
+                  // key={}
+                  type="button"
+                  className="w-full flex items-center justify-center border py-3 border-gray-600 text-white text-xs lg:text-base  lg:py-3 rounded-full hover:border-white transition"
+                >
+                  {elem.text}
+                </button>
+                <img className="w-7 absolute left-4 top-1/2 -translate-y-1/2 " src={elem.img} alt="" />
+              </div>
+            ))}
+          </div>
 
         {/* Footer */}
         <p className="text-center text-white text-md lg:text-md mt-6 lg:text-gray-400 mt-8">
           Already have an account?{" "}
           <br />
-          <span className="text-white text-lg lg:text-base hover:scale-110 transition duration-300 cursor-pointer"
+          <span className="text-white text-lg lg:text-base font-semibold hover:scale-110 transition duration-300 cursor-pointer"
           onClick={()=>{settoggle((prev)=>(!prev))}}>
             Log in
           </span>
