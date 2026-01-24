@@ -60,7 +60,9 @@ const Liked = () => {
           cursor-pointer
         "
       >
-        <Heart className=" fill-red-500 stroke-red-500" size={35} />
+        {/* <Heart className=" fill-red-500 stroke-red-500" size={35} />
+         */}
+         <img className="w-9 rounded-sm" src="https://misc.scdn.co/liked-songs/liked-songs-300.jpg" alt="" />
         Liked Song
       </div>
 

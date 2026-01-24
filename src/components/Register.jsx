@@ -27,7 +27,7 @@ const Register = ({settoggle}) => {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center py-4 lg:py-10 px-4 lg:px-0">
+    <div className="min-h-[100dvh] bg-black flex items-center justify-center py-4 lg:py-10 px-4 lg:px-0">
       <div className="w-full max-w-md px-4 flex flex-col gap-18 lg:px-6 lg:gap-0">
         {/* Spotify Logo */}
              <div className="flex justify-center flex-col items-center gap-2 mb-4">
